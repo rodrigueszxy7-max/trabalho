@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fundo -->
+  <img src="img/Frame 1.jpg" alt="Fundo Minecraft" class="background-img">
+
+  <!-- Botões centralizados -->
+  <div class="buttons-container">
+    <!-- Botões grandes -->
+    <button class="menu-button big" onclick="window.location.href='jogar.html'">Jogar</button>
+    <button class="menu-button big" onclick="window.location.href='multijogador.html'">MultiJogador</button>
+    <button class="menu-button big" onclick="window.location.href='mercado.html'">Mercado</button>
+
+    
+
+  <script>
+    function sair() {
+      window.close();
+      alert("Para sair, feche a aba manualmente!");
+    }
+
+    // Parallax leve no fundo
+    document.addEventListener("mousemove", (e) => {
+      const bg = document.querySelector(".background-img");
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+    });
+  </script>
+</body>
+</html>

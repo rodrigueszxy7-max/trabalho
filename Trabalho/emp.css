@@ -1,0 +1,196 @@
+/* Importa fonte pixelada Minecraftia */
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Minecraftia', monospace; /* fonte pixelada */
+  overflow: hidden;
+
+  /* Força renderização pixelada */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+/* Fundo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay */
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  padding-left: 120px;
+}
+
+/* Livro */
+.book {
+  position: relative;
+  width: 700px;
+  height: 400px;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Papel */
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  left: -25px;
+}
+
+/* Conteúdo sobre o papel */
+.book-content {
+  position: relative;
+  z-index: 2;
+  width: 75%;
+  text-align: center;
+  color: #3b2f1a;
+}
+
+/* Títulos e parágrafos com fonte pixelada */
+h1, h2, p, .btn, .back-button, .next-button {
+  font-family: 'Minecraftia', monospace; /* pixelada */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Personagem fixo acima do botão de voltar */
+.character {
+  position: fixed;
+  left: 20px;      /* alinhado com o botão de voltar */
+  bottom: 120px;   /* acima do botão */
+  width: 150px;
+  z-index: 11;     /* acima do botão e do papel */
+}
+
+/* Botões */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  align-self: center;
+}
+
+.btn {
+  background-color: #3b2f1a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 3px 3px 0 #000;
+  transition: background 0.3s, transform 0.15s;
+}
+
+.btn:hover {
+  background-color: #5c4423;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Botão de voltar fixo no canto inferior esquerdo */
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #5b5b5b;
+  border: 2px solid #000;
+  color: #fff;
+  font-family: 'Minecraftia', monospace;
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  image-rendering: pixelated;
+  transition: all 0.15s;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: #7a7a7a;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Botão de próximo tópico fixo no canto inferior direito */
+.next-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #5b5b5b;
+  border: 2px solid #000;
+  color: #fff;
+  font-family: 'Minecraftia', monospace;
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  image-rendering: pixelated;
+  transition: all 0.15s;
+  z-index: 10;
+}
+
+.next-button:hover {
+  background: #7a7a7a;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .next-button, .back-button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .character {
+    width: 120px;
+    bottom: 100px; /* mantém proporcional ao botão */
+  }
+}
+
+@media (max-width: 480px) {
+  .next-button, .back-button {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .character {
+    width: 100px;
+    bottom: 90px;
+  }
+}

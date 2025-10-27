@@ -1,0 +1,130 @@
+/* ======= TRAVAR ROLAGEM ======= */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* trava a rolagem da página */
+  height: 100%;     /* garante que o body ocupe toda a tela */
+  font-family: 'Minecraftia', sans-serif;
+  color: #fff;
+}
+
+/* Fundo da página */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/download (3).jpg'); /* Pôr do sol */
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: brightness(0.7);
+}
+
+/* Overlay central */
+.overlay {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  z-index: 1;
+}
+
+/* Placa */
+.book {
+  position: absolute;
+  width: 40%; /* deixa maior que antes */
+  max-width: 500px;
+}
+
+/* Posicionamento das placas */
+.book.left { top: 15%; left: 5%; }
+.book.right { top: 15%; right: 5%; }
+
+/* Placa (imagem de fundo) */
+.paper {
+  width: 100%;
+  padding-top: 100%; /* mantém proporção quadrada */
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+/* Texto sobre a placa */
+.book-content {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  right: 8%;
+  color: #3b2f1c;
+  text-shadow: 1px 1px 0 #d2b48c;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.book-content h1 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.book-content ul {
+  list-style-type: square;
+  text-align: left;
+  margin: 10px 0 20px 40px;
+}
+
+/* Personagem centralizado e mais para cima */
+.character {
+  position: absolute;
+  top: 25%;          /* ajusta a altura para subir o boneco */
+  left: 50%;         /* centraliza horizontalmente */
+  transform: translateX(-50%); /* mantém centralizado horizontalmente */
+  width: 250px;
+  z-index: 2;
+}
+
+/* ======= BOTÕES FIXOS NA COR #7a7a7a ======= */
+.back-button, .next-button {
+  position: fixed;
+  bottom: 30px;
+  font-family: 'Minecraftia', sans-serif;
+  background-color: #7a7a7a; /* cor fixa */
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.15s; /* só animação de elevação */
+  z-index: 10;
+  image-rendering: pixelated;
+}
+
+.back-button:hover, .next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.back-button { left: 30px; }
+.next-button { right: 30px; }
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .book {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .character { left: 50%; transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .book-content { font-size: 14px; }
+  .character { width: 180px; }
+  .back-button, .next-button { padding: 12px 20px; font-size: 14px; }
+}

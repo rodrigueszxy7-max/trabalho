@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ====== ESTILO GERAL ====== */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Press Start 2P', monospace;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('img/fundo para os bonecos.jpg') no-repeat center center fixed;
+  background-size: cover; /* cobre toda a aba */
+}
+
+/* ====== CONTEÚDO CENTRAL ====== */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Texto central */
+.game-title {
+  font-size: 26px;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.game-text {
+  font-size: 16px;
+  max-width: 600px; /* limita largura do texto */
+  text-align: center;
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* Desenvolvedores */
+.developers {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1; /* pode ser usado para animação da apresentação */
+  transition: opacity 1s, transform 1s;
+}
+
+.character img {
+  width: 120px; /* tamanho dos bonecos */
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Nome com moldura */
+.developer-name {
+  margin-top: 8px;
+  font-size: 12px;
+  text-shadow: 1px 1px 0 #000;
+  padding: 4px 8px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.5); /* fundo semi-transparente */
+}
+
+/* ====== BOTÕES ====== */
+.start-presentation,
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  background: #5b5b5b;
+  border: 2px solid #000;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+  image-rendering: pixelated;
+  transition: all 0.15s;
+  z-index: 2;
+}
+
+.start-presentation:hover,
+.back-button:hover {
+  background: #7a7a7a;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.start-presentation {
+  right: 20px;
+}
+
+.back-button {
+  left: 20px;
+}

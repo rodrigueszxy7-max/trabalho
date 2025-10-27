@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogar - EmpreendaCraft</title>
+  <link rel="stylesheet" href="jogar.css">
+</head>
+<body>
+  <!-- Conteúdo central -->
+  <div class="game-container">
+    <h1 class="game-title">Bem-vindo ao EmpreendaCraft!</h1>
+
+    <!-- Texto explicativo -->
+    <p class="game-text">
+      Os desenvolvedores do projeto EmpreendaCraft estão aqui para mostrar como funciona esse mundo de empreendedorismo dentro do universo Minecraft. Conheça a equipe que criou e construiu cada detalhe, e descubra como as ideias se transformam em blocos de inovação e aprendizado!
+    </p>
+
+    <!-- Desenvolvedores -->
+    <div class="developers">
+      <div class="character">
+        <img src="img/boneco_meu-removebg-preview.png" alt="Desenvolvedor 1">
+        <p class="developer-name">Kaique Rodrigues</p>
+      </div>
+      <div class="character">
+        <img src="img/boneco_do_jhonantan-removebg-preview.png" alt="Desenvolvedor 2">
+        <p class="developer-name">Jhonatan Serrano</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões -->
+  <button class="back-button" onclick="voltarPagina()">Voltar</button>
+  <button class="start-presentation" onclick="abrirApresentacao()">Começar Apresentação</button>
+
+  <!-- Script com áudio -->
+  <script>
+    // Carregando o áudio
+    const clickSound = new Audio('emp/audio/minecraft_click.mp3');
+    clickSound.preload = 'auto';
+    clickSound.load();
+
+    function tocarSom() {
+      clickSound.currentTime = 0;
+      const playPromise = clickSound.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => console.log('Erro ao tocar som:', err));
+      }
+    }
+
+    function abrirApresentacao() {
+      tocarSom();
+      setTimeout(() => {
+        window.open('emp/emp.html', '_self');
+      }, 200);
+    }
+
+    function voltarPagina() {
+      tocarSom();
+      setTimeout(() => {
+        window.history.back();
+      }, 200);
+    }
+  </script>
+</body>
+</html>

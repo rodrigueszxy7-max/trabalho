@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vantagens e Desvantagens - Minecraft</title>
+
+  <!-- Fonte pixelada Minecraftia -->
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="vtgdvg.css" />
+</head>
+<body>
+
+  <!-- Fundo da página diretamente no HTML -->
+  <div style="background-image: url('img/download (3).jpg'); 
+              background-size: cover; 
+              background-position: center; 
+              width: 100%; 
+              height: 100vh; 
+              position: fixed; 
+              top: 0; 
+              left: 0; 
+              z-index: -1;">
+  </div>
+
+  <div class="overlay">
+
+    <!-- Placa Vantagens -->
+    <div class="book left">
+      <div class="paper" style="background-image: url('img/Minecraft Barrel Block Pixel Art.jpg');"></div>
+      <div class="book-content">
+        <h1>💎 Vantagens</h1>
+        <ul>
+          <li>Liberdade de tomar decisões</li>
+          <li>Autonomia para escolher produtos e estratégias</li>
+          <li>Satisfação de ver o resultado do próprio esforço</li>
+          <li>Oportunidade de crescimento pessoal e profissional</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Placa Desvantagens -->
+    <div class="book right">
+      <div class="paper" style="background-image: url('img/Minecraft Barrel Block Pixel Art.jpg');"></div>
+      <div class="book-content">
+        <h1>🪓 Desvantagens</h1>
+        <ul>
+          <li>Grande responsabilidade</li>
+          <li>Tempo dedicado</li>
+          <li>Imprevistos que podem surgir</li>
+          <li>Risco de o negócio não dar certo no começo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Personagem -->
+    <img src="img/boneco_do_jhonantan-removebg-preview.png" alt="Personagem Minecraft" class="character">
+
+  </div>
+
+  <!-- Botões -->
+  <button class="back-button" onclick="window.history.back()">Voltar</button>
+  <button class="next-button" onclick="window.location.href='conclusao.html'">Próximo Tópico</button>
+
+  <!-- Som de clique -->
+  <script>
+    const clickSound = new Audio('audio/minecraft-click.mp3');
+    clickSound.volume = 0.5;
+
+    const buttons = document.querySelectorAll('.back-button, .next-button, .btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

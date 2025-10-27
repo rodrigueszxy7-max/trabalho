@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seja Empreendedor - Minecraft</title>
+
+  <!-- Fonte pixelada Minecraftia -->
+  <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="emp.css" />
+  
+  <style>
+    .next-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-family: 'Minecraftia', sans-serif;
+      background-color: #4CAF50; 
+      color: white;
+      border: 2px solid #2e7d32;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.1s, background-color 0.2s;
+    }
+
+    .next-button:hover {
+      background-color: #66BB6A;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <img src="img/emp.jpg" alt="Fundo Minecraft" class="background">
+
+  <div class="overlay">
+
+    <div class="book">
+      <img src="img/download-removebg-preview.png" alt="Papel Minecraft" class="paper">
+
+      <div class="book-content">
+        <h1>📘 Seja Empreendedor</h1>
+        <p>
+          Eu e meu amigo Kaique sempre tivemos o sonho de abrir nosso 
+          próprio negócio. Como nós dois gostamos muito de tecnologia e 
+          entendemos de computadores, decidimos criar uma loja de
+          informática chamada Modern Restore. A ideia surgiu depois de 
+          percebermos que muitas pessoas da nossa cidade tinham 
+          dificuldades para encontrar assistência técnica de qualidade e 
+          produtos modernos com bom preço.
+        </p>
+      </div>
+
+      <img src="img/boneco_do_jhonantan-removebg-preview.png" alt="Personagem Minecraft" class="character">
+    </div>
+
+  </div>
+
+  <button class="back-button" onclick="window.history.back()">Voltar</button>
+
+  <!-- Botão linkando para vtgdvg.html -->
+  <button class="next-button" onclick="window.location.href='vtgdvg.html'">
+    Próximo Tópico
+  </button>
+
+  <script>
+    const clickSound = new Audio('audio/minecraft-click.mp3');
+    clickSound.volume = 0.5;
+
+    const buttons = document.querySelectorAll('.back-button, .next-button, .btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    });
+  </script>
+
+</body>
+</html>
